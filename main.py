@@ -19,7 +19,7 @@ for i in link_numbers:
     ep =driver.find_element_by_partial_link_text("Episode "+i)
     ep.click()
     time.sleep(.5)
-    link = driver.find_element_by_id("direct-link")
+    link = driver.find_element_by_id("direct-link").get_attribute("value")
     print(link)
     episode_dropdown.click()
     time.sleep(.5)
