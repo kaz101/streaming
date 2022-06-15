@@ -6,6 +6,27 @@ driver = webdriver.Chrome("/home/kaz/github/streaming/chromedriver")
 driver.get('https://www.2embed.ru/library/tv/253')
 #time.sleep(.1)
 
+season_dropdown = driver.find_element_by_class_name('edit-season')
+season_dropdown.click()
+seasons = driver.find_elements_by_partial_link_text("Season")
+season_numbers = []
+season_num = 1
+for i in seasons:
+    season_numbers.append(str(season_num))
+    season_num +=1
+    season_select = driver.find_elements_by_partial_link_text("Season"+)
+print(season_numbers)
+
+
+
+
+
+
+
+
+
+
+
 def get_episodes():
     episode_dropdown = driver.find_element_by_id('ss-episodes-1')
     episode_dropdown.click()
@@ -26,4 +47,3 @@ def get_episodes():
         episode_dropdown.click()
         #time.sleep(.1)
     print(episode_links)
-get_episodes()
